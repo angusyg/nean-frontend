@@ -57,6 +57,7 @@ const cleanHtml = [
 const cleanImage = [`${destinationImage}`];
 const cleanI18n = [`${destinationI18n}`];
 const isProduction = (process.env.NODE_ENV === 'production');
+const isNeanModeFull = (process.env.NEAN_MODE === 'full');
 const pumpPromise = (streams) => {
   return new Promise((resolve, reject) => {
     pump(streams, (err) => {
@@ -111,6 +112,8 @@ gulp.task('js', () => pumpPromise([
   plugins.if(isProduction, uglify({ mangle: false })),
   plugins.if(isProduction, plugins.rename({ suffix: '.min' })),
   plugins.if(isProduction, gulp.dest(destinationJs)),
+  plugins.if(!isProduction, gulp.src(libJs)),
+  plugins.if(!isProduction, gulp.dest(destinationJs)),
   plugins.if(!isProduction, plugins.connect.reload()),
 ]));
 
@@ -138,7 +141,7 @@ gulp.task('i18n', () => pumpPromise([
 
 // creates connect server for dev mode
 gulp.task('connect', () => {
-  if (!isProduction) {
+  if (isProduction) {
     plugins.connect.server({
       root: ['web', 'node_modules'],
       livereload: true,
@@ -148,7 +151,7 @@ gulp.task('connect', () => {
 
 // watch files for reload in dev mode
 gulp.task('watch', () => {
-  if (!isProduction) {
+  if (isProduction) {
     gulp.watch(sourceCss, ['css']);
     gulp.watch(sourceJs, ['js']);
     gulp.watch(sourceHtml, ['html']);
