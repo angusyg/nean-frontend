@@ -1,0 +1,21 @@
+@import 'vars';
+
+.tooltip {
+  width: 70%;
+  .tooltip-inner {
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+  }
+  @each $type, $bg-color in (fe-error: $error-bg-color, fe-success: $success-bg-color) {
+    &.#{$type} {
+      .tooltip-inner {
+        color: $fo-color;
+        background-color: $bg-color;
+      }
+      @each $position in right, left, top, bottom  {
+        &.bs-tooltip-#{$position} .arrow::before {
+          border-#{$position}-color: $bg-color;
+        }
+      }
+    }
+  }
+}

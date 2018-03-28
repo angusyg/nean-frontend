@@ -1,0 +1,14 @@
+ {
+   "env": {
+     "browser": true,
+     "es6": true
+   },
+   "extends": [
+     "plugin:angular/johnpapa"
+   ],
+   "rules": {
+     "angular/function-type": [2, "named"],
+     "angular/file-name": 0,
+     "angular/no-run-logic": 0
+   }
+ }

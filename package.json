@@ -1,0 +1,62 @@
+{
+  "name": "nean-frontend",
+  "version": "1.0.0",
+  "description": "Nean stack frontend angularjs application",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint ./src",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "gulp",
+    "postinstall": "set NODE_ENV=production&& node ./node_modules/gulp/bin/gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angusyg/nean-frontend.git"
+  },
+  "keywords": [
+    "javascript",
+    "angularjs",
+    "nean",
+    "bootstrap",
+    "ui"
+  ],
+  "author": "angusyg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/angusyg/nean-frontend/issues"
+  },
+  "homepage": "https://github.com/angusyg/nean-frontend#readme",
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.15",
+    "angular": "^1.6.9",
+    "angular-animate": "^1.6.9",
+    "angular-messages": "^1.6.9",
+    "angular-storage": "0.0.15",
+    "angular-translate": "^2.17.0",
+    "angular-translate-loader-partial": "^2.17.0",
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.3.1",
+    "ui-bootstrap4": "^3.0.2"
+  },
+  "devDependencies": {
+    "del": "^3.0.0",
+    "eslint": "^4.17.0",
+    "eslint-plugin-angular": "^3.2.0",
+    "eslint-plugin-import": "^2.8.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.5.0",
+    "gulp-eslint": "^4.0.2",
+    "gulp-html-replace": "^1.6.2",
+    "gulp-if": "^2.0.2",
+    "gulp-livereload": "^3.8.1",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-uglify-es": "^1.0.0",
+    "gulp-util": "^3.0.8",
+    "pump": "^3.0.0",
+    "run-sequence": "^2.2.1"
+  }
+}
