@@ -17,7 +17,7 @@ Features
 Install
 -------
 
-  $ npm install https://github.com/angusyg/nean-frontend
+    $ npm install https://github.com/angusyg/nean-frontend
 
 Quick Start
 -----------
@@ -25,6 +25,7 @@ Quick Start
 After installation, a folder 'web' is created at root.
 For development, to launch a server and watch files changes, use :
 
-  $ gulp
-  or
-  $ npm run dev
+      $ gulp
+or
+
+      $ npm run dev
